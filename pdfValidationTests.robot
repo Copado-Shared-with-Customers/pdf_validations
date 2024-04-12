@@ -4,7 +4,7 @@ Library                         JSONLibrary
 
 Variables                       ../resources/languages.yaml
 
-Suite Setup                     OpenBrowser    about::blank    chrome
+Suite Setup                     OpenBrowser    about:blank    chrome
 Suite Teardown                  CloseAllBrowsers
 
 *** Variables ***
@@ -15,3 +15,8 @@ Validating text in PDF
     [Documentation]
     [Tags]    text_validation    smoke    
     UsePdf    ${pdf_file}
+    VerifyPdfText           15 Recommendations for Adding Users
+    VerifyPdfText           After implementing Salesforce,
+    ${file_content}     GetPdfText
+    Log To Console      ${file_content}
+    GoTo                ${pdf_file}
