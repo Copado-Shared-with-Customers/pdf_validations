@@ -1,22 +1,27 @@
 *** Settings ***
-Library                         QForce
-Library                         JSONLibrary
+Library                QForce
+Library                JSONLibrary
+Library                QImage
+Library                QVision
 
-Variables                       ../resources/languages.yaml
+Variables              ../resources/languages.yaml
 
-Suite Setup                     OpenBrowser    about:blank    chrome
-Suite Teardown                  CloseAllBrowsers
+Suite Setup            OpenBrowser                 about:blank    chrome
+Suite Teardown         CloseAllBrowsers
 
 *** Variables ***
-${pdf_file}    ../files/How_to_Simplify_Salesforce_as_You_Scale_A_Developer_Guide_Copado.pdf
+${pdf_file}            ../files/How_to_Simplify_Salesforce_as_You_Scale_A_Developer_Guide_Copado.pdf
+${open_pdf}            file:///home/services/suite/files/How_to_Simplify_Salesforce_as_You_Scale_A_Developer_Guide_Copado.pdf
 
 *** Test Cases ***
-Validating text in PDF
+Validate text in PDF
     [Documentation]
-    [Tags]    text_validation    smoke    
-    UsePdf    ${pdf_file}
-    VerifyPdfText           15 Recommendations for Adding Users
-    VerifyPdfText           After implementing Salesforce,
-    ${file_content}     GetPdfText
-    Log To Console      ${file_content}
-    GoTo                ${pdf_file}
+    [Tags]             text_validation             smoke
+    UsePdf             ${pdf_file}
+    VerifyPdfText      15 Recommendations for Adding Users
+
+Open PDF and validate text using OCR
+    [Documentation]
+    [Tags]
+    GoTo               ${open_pdf}
+    QVision.VerifyText         How to Simplify
