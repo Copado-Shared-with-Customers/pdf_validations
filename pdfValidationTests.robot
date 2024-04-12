@@ -25,6 +25,3 @@ Open PDF and validate text using OCR
     [Tags]
     GoTo                  ${open_pdf}
     QVision.VerifyText    How to Simplify
-
-    ${test}               set variable                Dit is een test
-    Log Many              ${test}
