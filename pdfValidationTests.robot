@@ -4,8 +4,6 @@ Library                   JSONLibrary
 Library                   QImage
 Library                   QVision
 
-Variables                 ../resources/languages.yaml
-
 Suite Setup               OpenBrowser                 about:blank        chrome
 Suite Teardown            CloseAllBrowsers
 
