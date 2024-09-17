@@ -1,7 +1,8 @@
 *** Settings *** 
-Library   DocTest.VisualTest
-Library    QWeb
+Library        DocTest.VisualTest
+Library        QWeb
+Suite Setup    OpenBrowser                 about:blank    chrome
 
 *** Test Cases *** 
 Compare two Images and highlight differences
-  goto    https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf
+    goto       https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf
