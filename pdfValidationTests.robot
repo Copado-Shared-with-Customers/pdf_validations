@@ -9,8 +9,8 @@ Suite Setup               OpenBrowser                 about:blank    chrome
 Suite Teardown            CloseAllBrowsers
 
 *** Variables ***
-${pdf_file}               ../files/How_to_Simplify_Salesforce_as_You_Scale_A_Developer_Guide_Copado.pdf
-${open_pdf}               file:///home/services/suite/files/How_to_Simplify_Salesforce_as_You_Scale_A_Developer_Guide_Copado.pdf
+${pdf_file}               ${CURDIR}/files/How_to_Simplify_Salesforce_as_You_Scale_A_Developer_Guide_Copado.pdf
+${open_pdf}               file:///${CURDIR}/files//How_to_Simplify_Salesforce_as_You_Scale_A_Developer_Guide_Copado.pdf
 
 *** Test Cases ***
 Validate text in PDF
