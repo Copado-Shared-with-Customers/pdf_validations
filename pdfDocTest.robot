@@ -1,6 +1,7 @@
 *** Settings *** 
 Library   DocTest.VisualTest
+Library    QWeb
 
 *** Test Cases *** 
 Compare two Images and highlight differences
-  Compare Images   Reference.jpg   Candidate.jpg
+  goto    https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf
