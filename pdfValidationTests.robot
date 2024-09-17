@@ -24,3 +24,6 @@ Open PDF and validate text using OCR
     [Tags]             ocr_validation
     GoTo                  ${open_pdf}
     QVision.VerifyText    How to Simplify
+    QVision.ClickText     COPADO
+    QVision.HotKey        pagedown
+    QVision.VerifyText    How Do You Grow Your Team?
